@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : \PDOException | null
+public [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
 
 
 
@@ -37,7 +37,7 @@ This method has no parameters.
 Return values
 ================
 
-Returns \PDOException | null.
+Returns [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null.
 
 
 

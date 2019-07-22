@@ -22,27 +22,27 @@ Class synopsis
 ==============
 
 
-class <span class="pl-k">LightDatabasePdoWrapper</span> extends SimplePdoWrapper implements SimplePdoWrapperInterface {
+class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php) implements [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php) {
 
 - Properties
-    - protected \PDOException|null [$pdoException](#property-pdoException) ;
+    - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [$pdoException](#property-pdoException) ;
 
 - Inherited properties
-    - protected static  [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
-    - protected  [SimplePdoWrapper::$connexion](#property-connexion) ;
-    - protected  [SimplePdoWrapper::$query](#property-query) ;
+    - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
+    - protected [\PDO](https://www.php.net/manual/en/class.pdo.php)|null [SimplePdoWrapper::$connexion](#property-connexion) ;
+    - protected string [SimplePdoWrapper::$query](#property-query) ;
 
 - Methods
     - public [__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md)() : void
     - public [init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
-    - public [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : \PDOException | null
+    - public [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
 
 - Inherited methods
-    - public SimplePdoWrapper::setConnexion(\PDO $connexion) : void
-    - public SimplePdoWrapper::getConnexion() : \PDO
+    - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
+    - public SimplePdoWrapper::getConnexion() : [PDO](https://www.php.net/manual/en/class.pdo.php)
     - public SimplePdoWrapper::setErrorMode(?$errorMode) : mixed
     - public SimplePdoWrapper::getError() : null | Ling\SimplePdoWrapper\array (http://php
-    - public SimplePdoWrapper::transaction(callable $transactionCallback, [\Exception](http://php.net/manual/en/class.exception.php) &$exception = null) : bool
+    - public SimplePdoWrapper::transaction(callable $transactionCallback, [\Exception](http://php.net/manual/en/class.exception.php) &$e = null) : bool
     - public SimplePdoWrapper::insert(?$table, array $fields = [], array $options = []) : false | string
     - public SimplePdoWrapper::replace(?$table, array $fields = [], array $options = []) : false | string
     - public SimplePdoWrapper::update(?$table, array $fields, $whereConds = null, array $markers = []) : bool
@@ -50,7 +50,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends SimplePdoWrapper
     - public SimplePdoWrapper::fetch(?$query, array $markers = [], $fetchStyle = null) : false | array
     - public SimplePdoWrapper::fetchAll(?$query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = []) : false | array
     - public SimplePdoWrapper::executeStatement(?$query) : false | int
-    - protected SimplePdoWrapper::boot() : \PDO | null
+    - protected SimplePdoWrapper::boot() : [PDO](https://www.php.net/manual/en/class.pdo.php) | null
     - protected SimplePdoWrapper::storeQueryObject(?$queryObject) : void
     - protected static SimplePdoWrapper::addWhereSubStmt(?&$stmt, array &$markers, ?$whereConds) : void
     - protected static SimplePdoWrapper::addAssignmentListSubStmt(?&$stmt, array &$markers, array $fields, $firstForm = false) : void

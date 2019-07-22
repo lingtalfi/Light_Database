@@ -86,6 +86,10 @@ database:
 History Log
 =============
 
+- 1.0.1 -- 2019-07-22
+
+    - update documentation for docTools
+    
 - 1.0.0 -- 2019-07-22
 
     - initial commit
