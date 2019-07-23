@@ -24,7 +24,7 @@ public [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Databa
 Creates the pdo instance and attaches it to this instance.
 The settings array expects the following keys:
 
-- pdo_driver: the pdo driver to use (i.e. mysql, sqlite, ...). The default is mysql.
+- ?pdo_driver: the pdo driver to use (i.e. mysql, sqlite, ...). The default is mysql.
      See the pdo documentation for more details.
 - pdo_database: the name of the (main) database.
 - pdo_user: the name of the database user.
@@ -82,7 +82,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L71-L126)
+See the source code for method [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L71-L128)
 
 
 See Also

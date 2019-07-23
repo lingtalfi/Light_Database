@@ -4,7 +4,7 @@
 
 The LightDatabasePdoWrapper class
 ================
-2019-07-22 --> 2019-07-22
+2019-07-22 --> 2019-07-23
 
 
 
@@ -41,7 +41,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
     - public SimplePdoWrapper::getConnexion() : [PDO](https://www.php.net/manual/en/class.pdo.php)
     - public SimplePdoWrapper::setErrorMode(?$errorMode) : mixed
-    - public SimplePdoWrapper::getError() : null | Ling\SimplePdoWrapper\array (http://php
+    - public SimplePdoWrapper::getError() : null | array
     - public SimplePdoWrapper::transaction(callable $transactionCallback, [\Exception](http://php.net/manual/en/class.exception.php) &$e = null) : bool
     - public SimplePdoWrapper::insert(?$table, array $fields = [], array $options = []) : false | string
     - public SimplePdoWrapper::replace(?$table, array $fields = [], array $options = []) : false | string

@@ -35,7 +35,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      * Creates the pdo instance and attaches it to this instance.
      * The settings array expects the following keys:
      *
-     * - pdo_driver: the pdo driver to use (i.e. mysql, sqlite, ...). The default is mysql.
+     * - ?pdo_driver: the pdo driver to use (i.e. mysql, sqlite, ...). The default is mysql.
      *      See the pdo documentation for more details.
      * - pdo_database: the name of the (main) database.
      * - pdo_user: the name of the database user.
@@ -71,10 +71,12 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     public function init(array $settings)
     {
 
+        $driver = $settings['pdo_driver']??'mysql';
+
         //--------------------------------------------
         // DSN
         //--------------------------------------------
-        $dsn = $settings['pdo_driver'] . ":dbname=" . $settings['pdo_database'];
+        $dsn = $driver . ":dbname=" . $settings['pdo_database'];
         if (array_key_exists('pdo_socket', $settings)) {
             $dsn .= ';unix_socket=' . $settings['pdo_socket'];
         } else {

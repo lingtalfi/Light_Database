@@ -86,6 +86,10 @@ database:
 History Log
 =============
 
+- 1.0.2 -- 2019-07-23
+
+    - fix typo
+    
 - 1.0.1 -- 2019-07-22
 
     - update documentation for docTools
