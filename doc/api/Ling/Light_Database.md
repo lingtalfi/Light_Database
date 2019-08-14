@@ -1,6 +1,6 @@
 Ling/Light_Database
 ================
-2019-07-22 --> 2019-07-23
+2019-07-22 --> 2019-08-14
 
 
 
@@ -8,6 +8,8 @@ Ling/Light_Database
 Table of contents
 ===========
 
+- [LightDatabasePdoWrapperAwareInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Aware/LightDatabasePdoWrapperAwareInterface.md) &ndash; The LightDatabasePdoWrapperAwareInterface interface.
+    - [LightDatabasePdoWrapperAwareInterface::setPdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Aware/LightDatabasePdoWrapperAwareInterface/setPdoWrapper.md) &ndash; Sets the pdo wrapper instance.
 - [LightDatabaseException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Exception/LightDatabaseException.md) &ndash; The LightDatabaseException class.
 - [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) &ndash; The LightDatabasePdoWrapper class.
     - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
