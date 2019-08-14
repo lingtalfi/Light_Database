@@ -54,4 +54,4 @@ See the source code of [Ling\Light_Database\Exception\LightDatabaseException](ht
 
 SeeAlso
 ==============
-Previous class: [LightDatabasePdoWrapperAwareInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Aware/LightDatabasePdoWrapperAwareInterface.md)<br>Next class: [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md)<br>
+Next class: [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md)<br>
