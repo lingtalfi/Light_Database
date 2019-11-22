@@ -2,7 +2,7 @@
 
 
 
-The LightDatabasePdoWrapper class
+The LightDatabaseService class
 ================
 2019-07-22 --> 2019-11-22
 
@@ -14,7 +14,7 @@ The LightDatabasePdoWrapper class
 Introduction
 ============
 
-The LightDatabasePdoWrapper class.
+The LightDatabaseService class.
 
 
 
@@ -22,22 +22,18 @@ Class synopsis
 ==============
 
 
-class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php) implements [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php) {
-
-- Properties
-    - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [$pdoException](#property-pdoException) ;
+class <span class="pl-k">LightDatabaseService</span> extends [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) implements [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php) {
 
 - Inherited properties
+    - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [LightDatabasePdoWrapper::$pdoException](#property-pdoException) ;
     - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
     - protected [\PDO](https://www.php.net/manual/en/class.pdo.php)|null [SimplePdoWrapper::$connexion](#property-connexion) ;
     - protected string [SimplePdoWrapper::$query](#property-query) ;
 
-- Methods
-    - public [__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md)() : void
-    - public [init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
-    - public [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
-
 - Inherited methods
+    - public [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md)() : void
+    - public [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
+    - public [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
     - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
     - public SimplePdoWrapper::getConnexion() : [PDO](https://www.php.net/manual/en/class.pdo.php)
     - public SimplePdoWrapper::setErrorMode($errorMode) : mixed
@@ -59,35 +55,6 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
 
 
 
-
-Properties
-=============
-
-- <span id="property-pdoException"><b>pdoException</b></span>
-
-    This property holds the pdoException thrown during the connection,
-    or null if such exception was not thrown.
-    
-    
-
-- <span id="property-defaultFetchStyle"><b>defaultFetchStyle</b></span>
-
-    This property holds the default fetch style value for the fetch and fetchAll methods.
-    
-    
-
-- <span id="property-connexion"><b>connexion</b></span>
-
-    This property holds the \PDO instance.
-    
-    
-
-- <span id="property-query"><b>query</b></span>
-
-    This property holds the last query executed.
-    Note: the concrete class is responsible for updating this value.
-    
-    
 
 
 
@@ -120,11 +87,11 @@ Methods
 
 Location
 =============
-Ling\Light_Database\LightDatabasePdoWrapper<br>
-See the source code of [Ling\Light_Database\LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php)
+Ling\Light_Database\Service\LightDatabaseService<br>
+See the source code of [Ling\Light_Database\Service\LightDatabaseService](https://github.com/lingtalfi/Light_Database/blob/master/Service/LightDatabaseService.php)
 
 
 
 SeeAlso
 ==============
-Previous class: [LightDatabaseException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Exception/LightDatabaseException.md)<br>Next class: [LightDatabaseService](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md)<br>
+Previous class: [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md)<br>

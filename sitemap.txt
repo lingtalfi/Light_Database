@@ -6,4 +6,5 @@ https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Datab
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database.md

@@ -1,5 +1,5 @@
 database:
-    instance: Ling\Light_Database\LightDatabasePdoWrapper
+    instance: Ling\Light_Database\Service\LightDatabaseService
     methods:
         init:
             settings: []
