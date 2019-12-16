@@ -5,6 +5,10 @@ https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Datab
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/pages/conception-notes.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/pages/events.md

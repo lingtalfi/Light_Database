@@ -58,6 +58,8 @@ database:
     methods:
         init:
             settings: []
+        setContainer:
+            container: @container()
 
 
 # example of settings
@@ -69,6 +71,7 @@ database:
 #        persistent: true
 #        errmode: exception
 #        initCommand: SET NAMES 'UTF8'
+
 
 
 
@@ -87,6 +90,10 @@ database:
 History Log
 =============
 
+- 1.4.0 -- 2019-12-16
+
+    - add LightDatabasePdoWrapper->onSuccess with events system
+    
 - 1.3.0 -- 2019-11-22
 
     - add LightDatabaseService

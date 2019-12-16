@@ -4,7 +4,7 @@
 
 The LightDatabasePdoWrapper class
 ================
-2019-07-22 --> 2019-11-22
+2019-07-22 --> 2019-12-16
 
 
 
@@ -26,6 +26,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
 
 - Properties
     - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [$pdoException](#property-pdoException) ;
+    - protected [Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) [$container](#property-container) ;
 
 - Inherited properties
     - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
@@ -36,6 +37,8 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public [__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md)() : void
     - public [init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
     - public [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
+    - public [setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container) : void
+    - protected [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)(string $type, string $table, string $query, array $arguments, ?$return = true) : void
 
 - Inherited methods
     - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
@@ -70,6 +73,12 @@ Properties
     
     
 
+- <span id="property-container"><b>container</b></span>
+
+    This property holds the container for this instance.
+    
+    
+
 - <span id="property-defaultFetchStyle"><b>defaultFetchStyle</b></span>
 
     This property holds the default fetch style value for the fetch and fetchAll methods.
@@ -97,6 +106,8 @@ Methods
 - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
 - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
 - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+- [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.
+- [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md) &ndash; A hook for other classes to use.
 - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
 - SimplePdoWrapper::getConnexion &ndash; Returns the current pdo connexion.
 - SimplePdoWrapper::setErrorMode &ndash; Sets the error mode.

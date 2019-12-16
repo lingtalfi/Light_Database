@@ -1,6 +1,6 @@
 Ling/Light_Database
 ================
-2019-07-22 --> 2019-11-22
+2019-07-22 --> 2019-12-16
 
 
 
@@ -13,6 +13,7 @@ Table of contents
     - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
     - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
     - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+    - [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.
     - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
     - SimplePdoWrapper::getConnexion &ndash; Returns the current pdo connexion.
     - SimplePdoWrapper::setErrorMode &ndash; Sets the error mode.
@@ -30,6 +31,7 @@ Table of contents
     - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
     - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
     - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+    - [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.
     - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
     - SimplePdoWrapper::getConnexion &ndash; Returns the current pdo connexion.
     - SimplePdoWrapper::setErrorMode &ndash; Sets the error mode.
@@ -47,6 +49,8 @@ Table of contents
 
 Dependencies
 ============
+- [Light](https://github.com/lingtalfi/Light)
+- [Light_Events](https://github.com/lingtalfi/Light_Events)
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper)
 
 

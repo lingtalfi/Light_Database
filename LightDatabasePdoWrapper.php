@@ -3,7 +3,10 @@
 
 namespace Ling\Light_Database;
 
+use Ling\Light\Events\LightEvent;
+use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
+use Ling\Light_Events\Service\LightEventsService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
 /**
@@ -22,12 +25,20 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
 
 
     /**
+     * This property holds the container for this instance.
+     * @var LightServiceContainerInterface
+     */
+    protected $container;
+
+
+    /**
      * Builds the LightDatabasePdoWrapper instance.
      */
     public function __construct()
     {
         parent::__construct();
         $this->pdoException = null;
+        $this->container = null;
     }
 
 
@@ -71,7 +82,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     public function init(array $settings)
     {
 
-        $driver = $settings['pdo_driver']??'mysql';
+        $driver = $settings['pdo_driver'] ?? 'mysql';
 
         //--------------------------------------------
         // DSN
@@ -139,4 +150,54 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     {
         return $this->pdoException;
     }
+
+
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * Sets the container.
+     *
+     * @param LightServiceContainerInterface $container
+     */
+    public function setContainer(LightServiceContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * @overrides
+     */
+    protected function onSuccess(string $type, string $table, string $query, array $arguments, $return = true)
+    {
+
+        $eventType = $type;
+        if ('insert' === $eventType || 'replace' === $eventType) {
+            $eventType = 'create';
+        }
+
+        //--------------------------------------------
+        // dispatching the event
+        //--------------------------------------------
+        $event = LightEvent::createByContainer($this->container);
+        $event->setVar('table', $table);
+        $event->setVar('action', $type);
+        $event->setVar('query', $query);
+        $event->setVar('arguments', $arguments);
+        $event->setVar('return', $return);
+        /**
+         * @var $dispatcher LightEventsService
+         */
+        $dispatcher = $this->container->get("events");
+        $dispatcher->dispatch(implode('_', [
+            'on',
+            $table,
+            $eventType,
+        ]), $event);
+    }
+
 }

@@ -3,6 +3,8 @@ database:
     methods:
         init:
             settings: []
+        setContainer:
+            container: @container()
 
 
 # example of settings
