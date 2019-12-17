@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22
+2019-07-22 -> 2019-12-17
 
 
 
@@ -90,6 +90,10 @@ database:
 History Log
 =============
 
+- 1.4.1 -- 2019-12-17
+
+    - update documentation events page
+    
 - 1.4.0 -- 2019-12-16
 
     - add LightDatabasePdoWrapper->onSuccess with events system
