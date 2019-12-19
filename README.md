@@ -90,6 +90,10 @@ database:
 History Log
 =============
 
+- 1.5.0 -- 2019-12-19
+
+    - add useMicroPermission system
+    
 - 1.4.1 -- 2019-12-17
 
     - update documentation events page

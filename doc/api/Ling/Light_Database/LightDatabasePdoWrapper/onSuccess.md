@@ -77,7 +77,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L175-L201)
+See the source code for method [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L274-L300)
 
 
 See Also
@@ -85,5 +85,5 @@ See Also
 
 The [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) class.
 
-Previous method: [setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md)<br>
+Previous method: [setUseMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setUseMicroPermission.md)<br>Next method: [checkMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/checkMicroPermission.md)<br>
 

@@ -6,7 +6,9 @@ namespace Ling\Light_Database;
 use Ling\Light\Events\LightEvent;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
+use Ling\Light_Database\Helper\LightDatabaseHelper;
 use Ling\Light_Events\Service\LightEventsService;
+use Ling\Light_MicroPermission\Service\LightMicroPermissionService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
 /**
@@ -30,6 +32,12 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     protected $container;
 
+    /**
+     * This property holds the useMicroPermission for this instance.
+     * @var bool=false
+     */
+    protected $useMicroPermission;
+
 
     /**
      * Builds the LightDatabasePdoWrapper instance.
@@ -39,6 +47,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
         parent::__construct();
         $this->pdoException = null;
         $this->container = null;
+        $this->useMicroPermission = false;
     }
 
 
@@ -153,6 +162,84 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
 
 
 
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * @overrides
+     */
+    public function insert($table, array $fields = [], array $options = [])
+    {
+        if (true === $this->useMicroPermission) {
+            $this->checkMicroPermission($table, "create");
+        }
+        return parent::insert($table, $fields, $options);
+    }
+
+    /**
+     * @overrides
+     */
+    public function replace($table, array $fields = [], array $options = [])
+    {
+        if (true === $this->useMicroPermission) {
+            $this->checkMicroPermission($table, "create");
+            $this->checkMicroPermission($table, "delete"); // not sure here. maybe update? or maybe just remove this?
+        }
+        return parent::replace($table, $fields, $options);
+    }
+
+    /**
+     * @overrides
+     */
+    public function update($table, array $fields, $whereConds = null, array $markers = [])
+    {
+        if (true === $this->useMicroPermission) {
+            $this->checkMicroPermission($table, "update");
+        }
+        return parent::update($table, $fields, $whereConds, $markers);
+    }
+
+    /**
+     * @overrides
+     */
+    public function delete($table, $whereConds = null, $markers = [])
+    {
+        if (true === $this->useMicroPermission) {
+            $this->checkMicroPermission($table, "delete");
+        }
+        return parent::delete($table, $whereConds, $markers);
+    }
+
+    /**
+     * @overrides
+     */
+    public function fetch($query, array $markers = [], $fetchStyle = null)
+    {
+        if (true === $this->useMicroPermission) {
+            $tables = LightDatabaseHelper::getTablesByQuery($query);
+            $this->checkMicroPermission($tables, "read");
+        }
+        return parent::fetch($query, $markers, $fetchStyle);
+    }
+
+
+    /**
+     * @overrides
+     */
+    public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = [])
+    {
+        if (true === $this->useMicroPermission) {
+            $tables = LightDatabaseHelper::getTablesByQuery($query);
+            $this->checkMicroPermission($tables, "read");
+        }
+        return parent::fetchAll($query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
+    }
+
+
+
+
+
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -165,6 +252,18 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     {
         $this->container = $container;
     }
+
+    /**
+     * Sets the useMicroPermission.
+     *
+     * @param bool $useMicroPermission
+     */
+    public function setUseMicroPermission(bool $useMicroPermission)
+    {
+        $this->useMicroPermission = $useMicroPermission;
+    }
+
+
 
     //--------------------------------------------
     //
@@ -199,5 +298,37 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
             $eventType,
         ]), $event);
     }
+
+
+    /**
+     * Checks whether the current user has the micro permission corresponding to the given table(s) and type.
+     * If not, an exception is thrown
+     *
+     * We use the @page(recommended micro-permission notation for database interaction).
+     *
+     *
+     *
+     * @param string|array $table
+     * @param string $type
+     * @throws \Exception
+     */
+    protected function checkMicroPermission($table, string $type)
+    {
+        /**
+         * @var $microService LightMicroPermissionService
+         */
+        $microService = $this->container->get('micro_permission');
+
+        if (false === is_array($table)) {
+            $table = [$table];
+        }
+        foreach ($table as $tableName) {
+            $microPermission = "tables.$tableName.$type";
+            if (false === $microService->hasMicroPermission($microPermission)) {
+                throw new LightDatabaseException("Micro-permission denied: you don't have the \"$microPermission\" micro-permission.");
+            }
+        }
+    }
+
 
 }

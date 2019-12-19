@@ -4,7 +4,7 @@
 
 The LightDatabaseException class
 ================
-2019-07-22 --> 2019-12-17
+2019-07-22 --> 2019-12-19
 
 
 
@@ -54,4 +54,4 @@ See the source code of [Ling\Light_Database\Exception\LightDatabaseException](ht
 
 SeeAlso
 ==============
-Next class: [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md)<br>
+Next class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>
