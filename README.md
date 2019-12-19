@@ -30,6 +30,10 @@ Or just download it and place it where you want otherwise.
 Summary
 ===========
 - [Light_Database api](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
+- Pages:
+    - [conception notes](https://github.com/lingtalfi/Light_Database/blob/master/personal/mydoc/pages/conception-notes.md)
+    - [events](https://github.com/lingtalfi/Light_Database/blob/master/personal/mydoc/pages/events.md)
+
 - [Services](#services)
 
 
@@ -90,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.5.1 -- 2019-12-19
+
+    - add links to pages in the README.md
+    
 - 1.5.0 -- 2019-12-19
 
     - add useMicroPermission system
