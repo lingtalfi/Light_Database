@@ -292,11 +292,12 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
          * @var $dispatcher LightEventsService
          */
         $dispatcher = $this->container->get("events");
-        $dispatcher->dispatch(implode('_', [
+        $eventName = 'Light_Database.' . implode('_', [
             'on',
             $table,
             $eventType,
-        ]), $event);
+        ]);
+        $dispatcher->dispatch($eventName, $event);
     }
 
 
