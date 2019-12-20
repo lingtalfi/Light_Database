@@ -66,7 +66,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::delete](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L231-L237)
+See the source code for method [LightDatabasePdoWrapper::delete](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L206-L212)
 
 
 See Also

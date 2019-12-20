@@ -61,7 +61,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::checkMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L341-L357)
+See the source code for method [LightDatabasePdoWrapper::checkMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L316-L332)
 
 
 See Also

@@ -94,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.7.0 -- 2019-12-20
+
+    - removed LightDatabasePdoWrapper->disableMicroPermissions and enableMicroPermissions methods (conception error)
+    
 - 1.6.0 -- 2019-12-20
 
     - add LightDatabasePdoWrapper->disableMicroPermissions and enableMicroPermissions methods

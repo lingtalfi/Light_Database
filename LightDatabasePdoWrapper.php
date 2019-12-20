@@ -161,31 +161,6 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     }
 
 
-    /**
-     * Disables the micro-permission system with namespace "tables".
-     */
-    public function disableMicroPermissions()
-    {
-        /**
-         * @var $microService LightMicroPermissionService
-         */
-        $microService = $this->container->get('micro_permission');
-        $microService->disableNamespace("tables");
-    }
-
-    /**
-     * Enable the micro-permission system with namespace "tables".
-     */
-    public function enableMicroPermissions()
-    {
-        /**
-         * @var $microService LightMicroPermissionService
-         */
-        $microService = $this->container->get('micro_permission');
-        $microService->restoreNamespaces("tables");
-    }
-
-
 
 
     //--------------------------------------------
