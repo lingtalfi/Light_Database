@@ -49,6 +49,7 @@ Table of contents
     - SimplePdoWrapper::transaction &ndash; Executes a transaction, and returns whether it was successful.
     - SimplePdoWrapper::executeStatement &ndash; Executes an SQL statement and returns the number of affected rows.
     - SimplePdoWrapper::addWhereSubStmt &ndash; defined in the comments of the SimplePdoWrapperInterface->update method.
+- [LightDatabaseTrait](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Traits/LightDatabaseTrait.md) &ndash; The LightDatabaseTrait class
 
 
 Dependencies

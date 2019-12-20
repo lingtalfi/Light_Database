@@ -21,6 +21,9 @@ https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Datab
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/update.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Traits/LightDatabaseTrait/activateDatabaseMicroPermission.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Traits/LightDatabaseTrait/deactivateDatabaseMicroPermission.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Traits/LightDatabaseTrait.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/pages/conception-notes.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/pages/events.md

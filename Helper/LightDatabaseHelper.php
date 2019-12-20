@@ -32,6 +32,9 @@ class LightDatabaseHelper
                 $v = array_pop($p);
                 $v = trim($v, '`');
             });
+            $tables = array_filter($tables, function ($v) {
+                return ('(' !== $v);
+            });
         }
         return $tables;
     }

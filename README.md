@@ -64,6 +64,8 @@ database:
             settings: []
         setContainer:
             container: @container()
+        setUseMicroPermission:
+            bool: false
 
 
 # example of settings
@@ -75,7 +77,6 @@ database:
 #        persistent: true
 #        errmode: exception
 #        initCommand: SET NAMES 'UTF8'
-
 
 
 
@@ -94,6 +95,10 @@ database:
 History Log
 =============
 
+- 1.7.1 -- 2019-12-20
+
+    - fix LightDatabaseHelper->getTablesByQuery, not handling nested queries properly
+    
 - 1.7.0 -- 2019-12-20
 
     - removed LightDatabasePdoWrapper->disableMicroPermissions and enableMicroPermissions methods (conception error)

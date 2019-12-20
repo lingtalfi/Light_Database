@@ -6,7 +6,7 @@ database:
         setContainer:
             container: @container()
         setUseMicroPermission:
-            bool: true
+            bool: false
 
 
 # example of settings

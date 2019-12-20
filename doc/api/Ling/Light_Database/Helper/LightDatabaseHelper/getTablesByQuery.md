@@ -53,7 +53,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [LightDatabaseHelper::getTablesByQuery](https://github.com/lingtalfi/Light_Database/blob/master/Helper/LightDatabaseHelper.php#L25-L37)
+See the source code for method [LightDatabaseHelper::getTablesByQuery](https://github.com/lingtalfi/Light_Database/blob/master/Helper/LightDatabaseHelper.php#L25-L40)
 
 
 See Also
