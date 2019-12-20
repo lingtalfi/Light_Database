@@ -1,6 +1,6 @@
 Ling/Light_Database
 ================
-2019-07-22 --> 2019-12-19
+2019-07-22 --> 2019-12-20
 
 
 
@@ -15,6 +15,8 @@ Table of contents
     - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
     - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
     - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+    - [LightDatabasePdoWrapper::disableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/disableMicroPermissions.md) &ndash; Disables the micro-permission system with namespace "tables".
+    - [LightDatabasePdoWrapper::enableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/enableMicroPermissions.md) &ndash; Enable the micro-permission system with namespace "tables".
     - [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/insert.md) &ndash; Executes the insert statement and returns the lastInsertId.
     - [LightDatabasePdoWrapper::replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md) &ndash; Executes the replace statement and returns the lastInsertId.
     - [LightDatabasePdoWrapper::update](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/update.md) &ndash; Executes the update statement and returns whether the statement was executed successfully.
@@ -34,6 +36,8 @@ Table of contents
     - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
     - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
     - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+    - [LightDatabasePdoWrapper::disableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/disableMicroPermissions.md) &ndash; Disables the micro-permission system with namespace "tables".
+    - [LightDatabasePdoWrapper::enableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/enableMicroPermissions.md) &ndash; Enable the micro-permission system with namespace "tables".
     - [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/insert.md) &ndash; Executes the insert statement and returns the lastInsertId.
     - [LightDatabasePdoWrapper::replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md) &ndash; Executes the replace statement and returns the lastInsertId.
     - [LightDatabasePdoWrapper::update](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/update.md) &ndash; Executes the update statement and returns whether the statement was executed successfully.

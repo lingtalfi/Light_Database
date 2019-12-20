@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::setUseMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L261-L264)
+See the source code for method [LightDatabasePdoWrapper::setUseMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L286-L289)
 
 
 See Also

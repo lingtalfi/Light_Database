@@ -4,7 +4,7 @@
 
 The LightDatabasePdoWrapper class
 ================
-2019-07-22 --> 2019-12-19
+2019-07-22 --> 2019-12-20
 
 
 
@@ -38,6 +38,8 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public [__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md)() : void
     - public [init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
     - public [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)() : [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | null
+    - public [disableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/disableMicroPermissions.md)() : void
+    - public [enableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/enableMicroPermissions.md)() : void
     - public [insert](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/insert.md)($table, ?array $fields = [], ?array $options = []) : false | string
     - public [replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md)($table, ?array $fields = [], ?array $options = []) : false | string
     - public [update](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/update.md)($table, array $fields, ?$whereConds = null, ?array $markers = []) : bool
@@ -115,6 +117,8 @@ Methods
 - [LightDatabasePdoWrapper::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/__construct.md) &ndash; Builds the LightDatabasePdoWrapper instance.
 - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
 - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
+- [LightDatabasePdoWrapper::disableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/disableMicroPermissions.md) &ndash; Disables the micro-permission system with namespace "tables".
+- [LightDatabasePdoWrapper::enableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/enableMicroPermissions.md) &ndash; Enable the micro-permission system with namespace "tables".
 - [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/insert.md) &ndash; Executes the insert statement and returns the lastInsertId.
 - [LightDatabasePdoWrapper::replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md) &ndash; Executes the replace statement and returns the lastInsertId.
 - [LightDatabasePdoWrapper::update](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/update.md) &ndash; Executes the update statement and returns whether the statement was executed successfully.

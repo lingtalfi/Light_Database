@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2019-12-19
+2019-07-22 -> 2019-12-20
 
 
 
@@ -94,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.6.0 -- 2019-12-20
+
+    - add LightDatabasePdoWrapper->disableMicroPermissions and enableMicroPermissions methods
+    
 - 1.5.2 -- 2019-12-19
 
     - fix functional typo in LightDatabasePdoWrapper->onSuccess: missing prefix in dispatched event

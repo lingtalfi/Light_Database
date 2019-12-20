@@ -67,7 +67,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L172-L178)
+See the source code for method [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L197-L203)
 
 
 See Also
@@ -75,5 +75,5 @@ See Also
 
 The [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) class.
 
-Previous method: [getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md)<br>Next method: [replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md)<br>
+Previous method: [enableMicroPermissions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/enableMicroPermissions.md)<br>Next method: [replace](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md)<br>
 
