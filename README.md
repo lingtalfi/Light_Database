@@ -64,8 +64,6 @@ database:
             settings: []
         setContainer:
             container: @container()
-        setUseMicroPermission:
-            bool: false
 
 
 # example of settings
@@ -77,6 +75,7 @@ database:
 #        persistent: true
 #        errmode: exception
 #        initCommand: SET NAMES 'UTF8'
+
 
 
 
@@ -95,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.8.1 -- 2020-03-02
+
+    - fix service config file
+    
 - 1.8.0 -- 2020-03-02
 
     - add listener concept, removed microPermission hook
