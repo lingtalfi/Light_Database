@@ -77,7 +77,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L227-L231)
+See the source code for method [LightDatabasePdoWrapper::fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L219-L223)
 
 
 See Also

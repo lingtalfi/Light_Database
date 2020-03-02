@@ -94,6 +94,14 @@ database:
 History Log
 =============
 
+- 1.9.0 -- 2020-03-02
+
+    - replace listener concept with eventHandler concept
+    
+- 1.8.2 -- 2020-03-02
+
+    - fix LightDatabasePdoWrapper, add registerListener method (forgot)
+    
 - 1.8.1 -- 2020-03-02
 
     - fix service config file

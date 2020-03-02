@@ -46,6 +46,11 @@ Return values
 Returns void.
 
 
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
+
 
 
 
@@ -54,7 +59,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L296-L304)
+See the source code for method [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L299-L304)
 
 
 See Also

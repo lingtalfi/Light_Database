@@ -1,6 +1,8 @@
 https://github.com/lingtalfi/Light_Database/blob/master/README.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Aware/LightDatabasePdoWrapperAwareInterface/setPdoWrapper.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Aware/LightDatabasePdoWrapperAwareInterface.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface/handle.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Exception/LightDatabaseException.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper/getTablesByQuery.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md
@@ -16,6 +18,7 @@ https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Datab
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/insert.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md
+https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/registerEventHandler.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/replace.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md
 https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setUseMicroPermission.md

@@ -57,7 +57,7 @@ Returns false | array.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::fetch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L217-L221)
+See the source code for method [LightDatabasePdoWrapper::fetch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L209-L213)
 
 
 See Also

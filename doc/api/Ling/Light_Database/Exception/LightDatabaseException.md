@@ -54,4 +54,4 @@ See the source code of [Ling\Light_Database\Exception\LightDatabaseException](ht
 
 SeeAlso
 ==============
-Next class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>
+Previous class: [LightDatabaseEventHandlerInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md)<br>Next class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>

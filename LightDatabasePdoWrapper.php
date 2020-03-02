@@ -5,8 +5,8 @@ namespace Ling\Light_Database;
 
 use Ling\Light\Events\LightEvent;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
+use Ling\Light_Database\EventHandler\LightDatabaseEventHandlerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
-use Ling\Light_Database\Listener\LightDatabaseListenerInterface;
 use Ling\Light_Events\Service\LightEventsService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
@@ -33,19 +33,11 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
 
 
     /**
-     * This property holds the listeners for this instance.
-     * Array of methodName => LightDatabaseListenerInterface.
-     * The methodName must be one of:
-     * - insert
-     * - replace
-     * - update
-     * - delete
-     * - fetch
-     * - fetchAll
+     * This property holds the eventHandlers for this instance.
      *
-     * @var LightDatabaseListenerInterface[]
+     * @var LightDatabaseEventHandlerInterface[]
      */
-    protected $listeners;
+    protected $eventHandlers;
 
 
     /**
@@ -56,7 +48,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
         parent::__construct();
         $this->pdoException = null;
         $this->container = null;
-        $this->listeners = [];
+        $this->eventHandlers = [];
     }
 
 
@@ -248,6 +240,17 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     }
 
 
+    /**
+     * Registers a event handler.
+     *
+     * @param LightDatabaseEventHandlerInterface $handler
+     */
+    public function registerEventHandler(LightDatabaseEventHandlerInterface $handler)
+    {
+        $this->eventHandlers[] = $handler;
+    }
+
+
 
     //--------------------------------------------
     //
@@ -285,21 +288,18 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     }
 
 
-
     /**
      * Dispatches the event which name is given with the given args.
      * The arguments are the same as those from the function being called.
      *
      * @param string $eventName
      * @param array ...$args
+     * @throws \Exception
      */
     protected function dispatch(string $eventName, array  ...$args)
     {
-        if (array_key_exists($eventName, $this->listeners)) {
-            $listeners = $this->listeners[$eventName];
-            foreach ($listeners as $listener) {
-                $listener->execute($eventName, ...$args);
-            }
+        foreach ($this->eventHandlers as $handler) {
+            $handler->handle($eventName, ...$args);
         }
     }
 

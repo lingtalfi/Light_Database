@@ -27,7 +27,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
 - Properties
     - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [$pdoException](#property-pdoException) ;
     - protected [Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) [$container](#property-container) ;
-    - protected [Ling\Light_Database\Listener\LightDatabaseListenerInterface[]](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Listener/LightDatabaseListenerInterface.md) [$listeners](#property-listeners) ;
+    - protected [Ling\Light_Database\EventHandler\LightDatabaseEventHandlerInterface[]](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md) [$eventHandlers](#property-eventHandlers) ;
 
 - Inherited properties
     - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
@@ -45,6 +45,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public [fetch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : false | array
     - public [fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetchAll.md)($query, ?array $markers = [], ?$fetchStyle = null, ?$fetchArg = null, ?array $ctorArgs = []) : false | array
     - public [setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container) : void
+    - public [registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/registerEventHandler.md)([Ling\Light_Database\EventHandler\LightDatabaseEventHandlerInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md) $handler) : void
     - protected [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)(string $type, string $table, string $query, array $arguments, ?$return = true) : void
     - protected [dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md)(string $eventName, ?array ...$args) : void
 
@@ -81,17 +82,9 @@ Properties
     
     
 
-- <span id="property-listeners"><b>listeners</b></span>
+- <span id="property-eventHandlers"><b>eventHandlers</b></span>
 
-    This property holds the listeners for this instance.
-    Array of methodName => LightDatabaseListenerInterface.
-    The methodName must be one of:
-    - insert
-    - replace
-    - update
-    - delete
-    - fetch
-    - fetchAll
+    This property holds the eventHandlers for this instance.
     
     
 
@@ -129,6 +122,7 @@ Methods
 - [LightDatabasePdoWrapper::fetch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetch.md) &ndash; Executes the prepared statement and returns the fetched row, or false in case of failure.
 - [LightDatabasePdoWrapper::fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetchAll.md) &ndash; Executes the prepared statement and return an array containing all of the result set rows.
 - [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.
+- [LightDatabasePdoWrapper::registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/registerEventHandler.md) &ndash; Registers a event handler.
 - [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md) &ndash; A hook for other classes to use.
 - [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md) &ndash; Dispatches the event which name is given with the given args.
 - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
@@ -155,4 +149,4 @@ See the source code of [Ling\Light_Database\LightDatabasePdoWrapper](https://git
 
 SeeAlso
 ==============
-Previous class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>Next class: [LightDatabaseListenerInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Listener/LightDatabaseListenerInterface.md)<br>
+Previous class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>Next class: [LightDatabaseService](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md)<br>
