@@ -48,7 +48,7 @@ Returns [PDOException](https://www.php.net/manual/en/class.pdoexception.php) | n
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L158-L161)
+See the source code for method [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L167-L170)
 
 
 See Also

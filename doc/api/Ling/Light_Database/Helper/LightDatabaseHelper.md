@@ -4,7 +4,7 @@
 
 The LightDatabaseHelper class
 ================
-2019-07-22 --> 2019-12-20
+2019-07-22 --> 2020-03-02
 
 
 
@@ -24,6 +24,9 @@ Class synopsis
 
 class <span class="pl-k">LightDatabaseHelper</span>  {
 
+- Properties
+    - private static array [$tablesByQueries](#property-tablesByQueries) = [] ;
+
 - Methods
     - public static [getTablesByQuery](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper/getTablesByQuery.md)(string $query) : array
 
@@ -31,6 +34,16 @@ class <span class="pl-k">LightDatabaseHelper</span>  {
 
 
 
+
+Properties
+=============
+
+- <span id="property-tablesByQueries"><b>tablesByQueries</b></span>
+
+    This property holds the tablesByQueries for this instance.
+    This is a cache.
+    
+    
 
 
 

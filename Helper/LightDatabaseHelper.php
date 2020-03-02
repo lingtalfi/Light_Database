@@ -11,6 +11,13 @@ class LightDatabaseHelper
 
 
     /**
+     * This property holds the tablesByQueries for this instance.
+     * This is a cache.
+     * @var array
+     */
+    private static $tablesByQueries = [];
+
+    /**
      * Returns the array of tables used in the given sql query.
      * This only works if the table names (and database names if) don't contain a dot or a space in them.
      *
@@ -24,6 +31,14 @@ class LightDatabaseHelper
      */
     public static function getTablesByQuery(string $query): array
     {
+
+        // cached already?
+        $id = crc32($query);
+        if (array_key_exists($id, self::$tablesByQueries)) {
+            return self::$tablesByQueries[$id];
+        }
+
+
         $tables = [];
         if (preg_match_all('!((FROM|JOIN)\s([\S]+))!i', $query, $matches)) {
             $tables = array_unique($matches[3]);
@@ -36,6 +51,9 @@ class LightDatabaseHelper
                 return ('(' !== $v);
             });
         }
+
+
+        self::$tablesByQueries[$id] = $tables;
         return $tables;
     }
 }

@@ -82,7 +82,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L91-L148)
+See the source code for method [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L100-L157)
 
 
 See Also

@@ -67,7 +67,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L172-L178)
+See the source code for method [LightDatabasePdoWrapper::insert](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L181-L185)
 
 
 See Also

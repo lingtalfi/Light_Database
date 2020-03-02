@@ -6,9 +6,8 @@ namespace Ling\Light_Database;
 use Ling\Light\Events\LightEvent;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
-use Ling\Light_Database\Helper\LightDatabaseHelper;
+use Ling\Light_Database\Listener\LightDatabaseListenerInterface;
 use Ling\Light_Events\Service\LightEventsService;
-use Ling\Light_MicroPermission\Service\LightMicroPermissionService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
 /**
@@ -32,11 +31,21 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     protected $container;
 
+
     /**
-     * This property holds the useMicroPermission for this instance.
-     * @var bool=false
+     * This property holds the listeners for this instance.
+     * Array of methodName => LightDatabaseListenerInterface.
+     * The methodName must be one of:
+     * - insert
+     * - replace
+     * - update
+     * - delete
+     * - fetch
+     * - fetchAll
+     *
+     * @var LightDatabaseListenerInterface[]
      */
-    protected $useMicroPermission;
+    protected $listeners;
 
 
     /**
@@ -47,7 +56,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
         parent::__construct();
         $this->pdoException = null;
         $this->container = null;
-        $this->useMicroPermission = false;
+        $this->listeners = [];
     }
 
 
@@ -171,9 +180,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function insert($table, array $fields = [], array $options = [])
     {
-        if (true === $this->useMicroPermission) {
-            $this->checkMicroPermission($table, "create");
-        }
+        $this->dispatch("insert.before", ...func_get_args());
         return parent::insert($table, $fields, $options);
     }
 
@@ -182,10 +189,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function replace($table, array $fields = [], array $options = [])
     {
-        if (true === $this->useMicroPermission) {
-            $this->checkMicroPermission($table, "create");
-            $this->checkMicroPermission($table, "delete"); // not sure here. maybe update? or maybe just remove this?
-        }
+        $this->dispatch("replace.before", ...func_get_args());
         return parent::replace($table, $fields, $options);
     }
 
@@ -194,9 +198,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function update($table, array $fields, $whereConds = null, array $markers = [])
     {
-        if (true === $this->useMicroPermission) {
-            $this->checkMicroPermission($table, "update");
-        }
+        $this->dispatch("update.before", ...func_get_args());
         return parent::update($table, $fields, $whereConds, $markers);
     }
 
@@ -205,9 +207,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function delete($table, $whereConds = null, $markers = [])
     {
-        if (true === $this->useMicroPermission) {
-            $this->checkMicroPermission($table, "delete");
-        }
+        $this->dispatch("delete.before", ...func_get_args());
         return parent::delete($table, $whereConds, $markers);
     }
 
@@ -216,10 +216,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetch($query, array $markers = [], $fetchStyle = null)
     {
-        if (true === $this->useMicroPermission) {
-            $tables = LightDatabaseHelper::getTablesByQuery($query);
-            $this->checkMicroPermission($tables, "read");
-        }
+        $this->dispatch("fetch.before", ...func_get_args());
         return parent::fetch($query, $markers, $fetchStyle);
     }
 
@@ -229,10 +226,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = [])
     {
-        if (true === $this->useMicroPermission) {
-            $tables = LightDatabaseHelper::getTablesByQuery($query);
-            $this->checkMicroPermission($tables, "read");
-        }
+        $this->dispatch("fetchAll.before", ...func_get_args());
         return parent::fetchAll($query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
     }
 
@@ -251,16 +245,6 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     public function setContainer(LightServiceContainerInterface $container)
     {
         $this->container = $container;
-    }
-
-    /**
-     * Sets the useMicroPermission.
-     *
-     * @param bool $useMicroPermission
-     */
-    public function setUseMicroPermission(bool $useMicroPermission)
-    {
-        $this->useMicroPermission = $useMicroPermission;
     }
 
 
@@ -301,35 +285,22 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     }
 
 
-    /**
-     * Checks whether the current user has the micro permission corresponding to the given table(s) and type.
-     * If not, an exception is thrown
-     *
-     * We use the @page(recommended micro-permission notation for database interaction).
-     *
-     *
-     *
-     * @param string|array $table
-     * @param string $type
-     * @throws \Exception
-     */
-    protected function checkMicroPermission($table, string $type)
-    {
-        /**
-         * @var $microService LightMicroPermissionService
-         */
-        $microService = $this->container->get('micro_permission');
 
-        if (false === is_array($table)) {
-            $table = [$table];
-        }
-        foreach ($table as $tableName) {
-            $microPermission = "tables.$tableName.$type";
-            if (false === $microService->hasMicroPermission($microPermission)) {
-                throw new LightDatabaseException("Micro-permission denied: you don't have the \"$microPermission\" micro-permission.");
+    /**
+     * Dispatches the event which name is given with the given args.
+     * The arguments are the same as those from the function being called.
+     *
+     * @param string $eventName
+     * @param array ...$args
+     */
+    protected function dispatch(string $eventName, array  ...$args)
+    {
+        if (array_key_exists($eventName, $this->listeners)) {
+            $listeners = $this->listeners[$eventName];
+            foreach ($listeners as $listener) {
+                $listener->execute($eventName, ...$args);
             }
         }
     }
-
 
 }

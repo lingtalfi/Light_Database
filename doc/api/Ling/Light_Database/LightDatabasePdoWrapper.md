@@ -4,7 +4,7 @@
 
 The LightDatabasePdoWrapper class
 ================
-2019-07-22 --> 2019-12-20
+2019-07-22 --> 2020-03-02
 
 
 
@@ -27,7 +27,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
 - Properties
     - protected [\PDOException](https://www.php.net/manual/en/class.pdoexception.php)|null [$pdoException](#property-pdoException) ;
     - protected [Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) [$container](#property-container) ;
-    - protected bool [$useMicroPermission](#property-useMicroPermission) ;
+    - protected [Ling\Light_Database\Listener\LightDatabaseListenerInterface[]](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Listener/LightDatabaseListenerInterface.md) [$listeners](#property-listeners) ;
 
 - Inherited properties
     - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
@@ -45,9 +45,8 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public [fetch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : false | array
     - public [fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetchAll.md)($query, ?array $markers = [], ?$fetchStyle = null, ?$fetchArg = null, ?array $ctorArgs = []) : false | array
     - public [setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container) : void
-    - public [setUseMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setUseMicroPermission.md)(bool $useMicroPermission) : void
     - protected [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)(string $type, string $table, string $query, array $arguments, ?$return = true) : void
-    - protected [checkMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/checkMicroPermission.md)($table, string $type) : void
+    - protected [dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md)(string $eventName, ?array ...$args) : void
 
 - Inherited methods
     - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
@@ -82,9 +81,17 @@ Properties
     
     
 
-- <span id="property-useMicroPermission"><b>useMicroPermission</b></span>
+- <span id="property-listeners"><b>listeners</b></span>
 
-    This property holds the useMicroPermission for this instance.
+    This property holds the listeners for this instance.
+    Array of methodName => LightDatabaseListenerInterface.
+    The methodName must be one of:
+    - insert
+    - replace
+    - update
+    - delete
+    - fetch
+    - fetchAll
     
     
 
@@ -122,9 +129,8 @@ Methods
 - [LightDatabasePdoWrapper::fetch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetch.md) &ndash; Executes the prepared statement and returns the fetched row, or false in case of failure.
 - [LightDatabasePdoWrapper::fetchAll](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/fetchAll.md) &ndash; Executes the prepared statement and return an array containing all of the result set rows.
 - [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.
-- [LightDatabasePdoWrapper::setUseMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setUseMicroPermission.md) &ndash; Sets the useMicroPermission.
 - [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md) &ndash; A hook for other classes to use.
-- [LightDatabasePdoWrapper::checkMicroPermission](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/checkMicroPermission.md) &ndash; Checks whether the current user has the micro permission corresponding to the given table(s) and type.
+- [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md) &ndash; Dispatches the event which name is given with the given args.
 - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
 - SimplePdoWrapper::getConnexion &ndash; Returns the current pdo connexion.
 - SimplePdoWrapper::setErrorMode &ndash; Sets the error mode.
@@ -149,4 +155,4 @@ See the source code of [Ling\Light_Database\LightDatabasePdoWrapper](https://git
 
 SeeAlso
 ==============
-Previous class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>Next class: [LightDatabaseService](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService.md)<br>
+Previous class: [LightDatabaseHelper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Helper/LightDatabaseHelper.md)<br>Next class: [LightDatabaseListenerInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Listener/LightDatabaseListenerInterface.md)<br>

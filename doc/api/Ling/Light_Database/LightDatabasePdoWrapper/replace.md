@@ -70,7 +70,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::replace](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L183-L190)
+See the source code for method [LightDatabasePdoWrapper::replace](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L190-L194)
 
 
 See Also

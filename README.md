@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2019-12-20
+2019-07-22 -> 2020-03-02
 
 
 
@@ -95,6 +95,10 @@ database:
 History Log
 =============
 
+- 1.8.0 -- 2020-03-02
+
+    - add listener concept, removed microPermission hook
+    
 - 1.7.1 -- 2019-12-20
 
     - fix LightDatabaseHelper->getTablesByQuery, not handling nested queries properly
