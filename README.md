@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2020-03-02
+2019-07-22 -> 2020-03-03
 
 
 
@@ -94,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.9.1 -- 2020-03-03
+
+    - fix LightDatabasePdoWrapper->dispatch, wrong method signature
+    
 - 1.9.0 -- 2020-03-02
 
     - replace listener concept with eventHandler concept

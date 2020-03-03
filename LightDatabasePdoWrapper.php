@@ -293,10 +293,10 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      * The arguments are the same as those from the function being called.
      *
      * @param string $eventName
-     * @param array ...$args
+     * @param ...$args
      * @throws \Exception
      */
-    protected function dispatch(string $eventName, array  ...$args)
+    protected function dispatch(string $eventName, ...$args)
     {
         foreach ($this->eventHandlers as $handler) {
             $handler->handle($eventName, ...$args);
