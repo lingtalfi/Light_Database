@@ -181,7 +181,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function replace($table, array $fields = [], array $options = [])
     {
-        $this->dispatch("replace.before", ...func_get_args());
+        $this->dispatch("replace.before", $table, $fields, $options);
         return parent::replace($table, $fields, $options);
     }
 
