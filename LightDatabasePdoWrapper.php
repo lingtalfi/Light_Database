@@ -172,7 +172,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function insert($table, array $fields = [], array $options = [])
     {
-        $this->dispatch("insert.before", ...func_get_args());
+        $this->dispatch("insert.before", $table, $fields, $options);
         return parent::insert($table, $fields, $options);
     }
 
@@ -190,7 +190,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function update($table, array $fields, $whereConds = null, array $markers = [])
     {
-        $this->dispatch("update.before", ...func_get_args());
+        $this->dispatch("update.before", $table, $fields, $whereConds, $markers);
         return parent::update($table, $fields, $whereConds, $markers);
     }
 
@@ -199,7 +199,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function delete($table, $whereConds = null, $markers = [])
     {
-        $this->dispatch("delete.before", ...func_get_args());
+        $this->dispatch("delete.before", $table, $whereConds, $markers);
         return parent::delete($table, $whereConds, $markers);
     }
 
@@ -208,7 +208,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetch($query, array $markers = [], $fetchStyle = null)
     {
-        $this->dispatch("fetch.before", ...func_get_args());
+        $this->dispatch("fetch.before", $query, $markers, $fetchStyle);
         return parent::fetch($query, $markers, $fetchStyle);
     }
 
@@ -218,7 +218,7 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = [])
     {
-        $this->dispatch("fetchAll.before", ...func_get_args());
+        $this->dispatch("fetchAll.before", $query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
         return parent::fetchAll($query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
     }
 

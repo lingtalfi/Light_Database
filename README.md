@@ -94,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.9.2 -- 2020-03-03
+
+    - fix LightDatabasePdoWrapper->dispatch passing only user-defined arguments instead of all method defined arguments
+    
 - 1.9.1 -- 2020-03-03
 
     - fix LightDatabasePdoWrapper->dispatch, wrong method signature
