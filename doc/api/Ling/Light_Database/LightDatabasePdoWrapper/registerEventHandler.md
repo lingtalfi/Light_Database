@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L248-L251)
+See the source code for method [LightDatabasePdoWrapper::registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L256-L259)
 
 
 See Also

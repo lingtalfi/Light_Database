@@ -77,7 +77,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L261-L288)
+See the source code for method [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L269-L296)
 
 
 See Also

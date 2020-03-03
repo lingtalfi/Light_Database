@@ -172,16 +172,20 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function insert($table, array $fields = [], array $options = [])
     {
-        $this->dispatch("insert.before", $table, $fields, $options);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("insert.before", $isSystemCall, $table, $fields, $options);
         return parent::insert($table, $fields, $options);
     }
+
+
 
     /**
      * @overrides
      */
     public function replace($table, array $fields = [], array $options = [])
     {
-        $this->dispatch("replace.before", $table, $fields, $options);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("replace.before", $isSystemCall, $table, $fields, $options);
         return parent::replace($table, $fields, $options);
     }
 
@@ -190,7 +194,8 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function update($table, array $fields, $whereConds = null, array $markers = [])
     {
-        $this->dispatch("update.before", $table, $fields, $whereConds, $markers);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("update.before", $isSystemCall, $table, $fields, $whereConds, $markers);
         return parent::update($table, $fields, $whereConds, $markers);
     }
 
@@ -199,7 +204,8 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function delete($table, $whereConds = null, $markers = [])
     {
-        $this->dispatch("delete.before", $table, $whereConds, $markers);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("delete.before", $isSystemCall, $table, $whereConds, $markers);
         return parent::delete($table, $whereConds, $markers);
     }
 
@@ -208,7 +214,8 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetch($query, array $markers = [], $fetchStyle = null)
     {
-        $this->dispatch("fetch.before", $query, $markers, $fetchStyle);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("fetch.before", $isSystemCall, $query, $markers, $fetchStyle);
         return parent::fetch($query, $markers, $fetchStyle);
     }
 
@@ -218,7 +225,8 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
      */
     public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = [])
     {
-        $this->dispatch("fetchAll.before", $query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
+        $isSystemCall = $this->peakSystemCall();
+        $this->dispatch("fetchAll.before", $isSystemCall, $query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
         return parent::fetchAll($query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
     }
 
@@ -303,4 +311,17 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
         }
     }
 
+
+
+    /**
+     * Returns whether the current call was a system call, and turns the system call flag back down.
+     * See more details in the @page(SimplePdoWrapper conception notes).
+     * @return bool
+     */
+    protected function peakSystemCall(): bool
+    {
+        $isSystemCall = SimplePdoWrapper::$isSystemCall;
+        SimplePdoWrapper::$isSystemCall = false;
+        return $isSystemCall;
+    }
 }

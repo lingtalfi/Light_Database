@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L237-L240)
+See the source code for method [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L245-L248)
 
 
 See Also

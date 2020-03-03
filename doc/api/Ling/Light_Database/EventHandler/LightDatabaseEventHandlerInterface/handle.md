@@ -16,7 +16,7 @@ Description
 ================
 
 
-abstract public [LightDatabaseEventHandlerInterface::handle](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface/handle.md)(string $eventName, ?...$args) : void
+abstract public [LightDatabaseEventHandlerInterface::handle](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface/handle.md)(string $eventName, bool $isSystemCall, ?...$args) : void
 
 
 
@@ -32,6 +32,8 @@ The eventName is one of:
 - fetch
 - fetchAll
 
+See the [SimplePdoWrapper conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md) for more details about the isSystemCall boolean argument.
+
 See the [LightDatabasePdoWrapper class](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) methods for more details about the args.
 
 
@@ -42,6 +44,10 @@ Parameters
 
 
 - eventName
+
+    
+
+- isSystemCall
 
     
 
@@ -69,7 +75,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabaseEventHandlerInterface::handle](https://github.com/lingtalfi/Light_Database/blob/master/EventHandler/LightDatabaseEventHandlerInterface.php#L33-L33)
+See the source code for method [LightDatabaseEventHandlerInterface::handle](https://github.com/lingtalfi/Light_Database/blob/master/EventHandler/LightDatabaseEventHandlerInterface.php#L36-L36)
 
 
 See Also

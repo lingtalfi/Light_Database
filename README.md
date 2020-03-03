@@ -94,6 +94,10 @@ database:
 History Log
 =============
 
+- 1.10.0 -- 2020-03-03
+
+    - implement system call concept
+    
 - 1.9.3 -- 2020-03-03
 
     - fix LightDatabasePdoWrapper->dispatch forgot replace fix for passing only user-defined arguments instead of all method defined arguments

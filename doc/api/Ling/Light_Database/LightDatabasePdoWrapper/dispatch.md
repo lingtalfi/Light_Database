@@ -59,7 +59,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L299-L304)
+See the source code for method [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/LightDatabasePdoWrapper.php#L307-L312)
 
 
 See Also
@@ -67,5 +67,5 @@ See Also
 
 The [LightDatabasePdoWrapper](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper.md) class.
 
-Previous method: [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)<br>
+Previous method: [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)<br>Next method: [peakSystemCall](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/peakSystemCall.md)<br>
 

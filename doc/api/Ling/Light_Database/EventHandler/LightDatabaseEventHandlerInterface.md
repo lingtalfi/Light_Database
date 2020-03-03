@@ -25,7 +25,7 @@ Class synopsis
 abstract class <span class="pl-k">LightDatabaseEventHandlerInterface</span>  {
 
 - Methods
-    - abstract public [handle](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface/handle.md)(string $eventName, ?...$args) : void
+    - abstract public [handle](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface/handle.md)(string $eventName, bool $isSystemCall, ?...$args) : void
 
 }
 

@@ -30,6 +30,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - protected [Ling\Light_Database\EventHandler\LightDatabaseEventHandlerInterface[]](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md) [$eventHandlers](#property-eventHandlers) ;
 
 - Inherited properties
+    - public static bool [SimplePdoWrapper::$isSystemCall](#property-isSystemCall) = false ;
     - protected static int [SimplePdoWrapper::$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
     - protected [\PDO](https://www.php.net/manual/en/class.pdo.php)|null [SimplePdoWrapper::$connexion](#property-connexion) ;
     - protected string [SimplePdoWrapper::$query](#property-query) ;
@@ -48,6 +49,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - public [registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/registerEventHandler.md)([Ling\Light_Database\EventHandler\LightDatabaseEventHandlerInterface](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/EventHandler/LightDatabaseEventHandlerInterface.md) $handler) : void
     - protected [onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md)(string $type, string $table, string $query, array $arguments, ?$return = true) : void
     - protected [dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md)(string $eventName, ?...$args) : void
+    - protected [peakSystemCall](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/peakSystemCall.md)() : bool
 
 - Inherited methods
     - public SimplePdoWrapper::setConnexion([\PDO](https://www.php.net/manual/en/class.pdo.php) $connexion) : void
@@ -88,6 +90,13 @@ Properties
     
     
 
+- <span id="property-isSystemCall"><b>isSystemCall</b></span>
+
+    This property holds the isSystemCall for this instance.
+    See the [SimplePdoWrapper conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md) for more info.
+    
+    
+
 - <span id="property-defaultFetchStyle"><b>defaultFetchStyle</b></span>
 
     This property holds the default fetch style value for the fetch and fetchAll methods.
@@ -125,6 +134,7 @@ Methods
 - [LightDatabasePdoWrapper::registerEventHandler](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/registerEventHandler.md) &ndash; Registers a event handler.
 - [LightDatabasePdoWrapper::onSuccess](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/onSuccess.md) &ndash; A hook for other classes to use.
 - [LightDatabasePdoWrapper::dispatch](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/dispatch.md) &ndash; Dispatches the event which name is given with the given args.
+- [LightDatabasePdoWrapper::peakSystemCall](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/peakSystemCall.md) &ndash; Returns whether the current call was a system call, and turns the system call flag back down.
 - SimplePdoWrapper::setConnexion &ndash; Sets the pdo connexion.
 - SimplePdoWrapper::getConnexion &ndash; Returns the current pdo connexion.
 - SimplePdoWrapper::setErrorMode &ndash; Sets the error mode.
