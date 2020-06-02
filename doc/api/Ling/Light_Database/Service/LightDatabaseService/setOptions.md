@@ -54,7 +54,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabaseService::setOptions](https://github.com/lingtalfi/Light_Database/blob/master/Service/LightDatabaseService.php#L46-L49)
+See the source code for method [LightDatabaseService::setOptions](https://github.com/lingtalfi/Light_Database/blob/master/Service/LightDatabaseService.php#L47-L50)
 
 
 See Also

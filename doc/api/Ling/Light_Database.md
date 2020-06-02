@@ -70,5 +70,6 @@ Dependencies
 - [Light_Events](https://github.com/lingtalfi/Light_Events)
 - [Light_UserRowRestriction](https://github.com/lingtalfi/Light_UserRowRestriction)
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper)
+- [ArrayToString](https://github.com/lingtalfi/ArrayToString)
 
 

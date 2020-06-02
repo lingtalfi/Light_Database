@@ -63,7 +63,7 @@ class <span class="pl-k">LightDatabasePdoWrapper</span> extends [SimplePdoWrappe
     - protected SimplePdoWrapper::boot() : [PDO](https://www.php.net/manual/en/class.pdo.php) | null
     - protected SimplePdoWrapper::storeQueryObject($queryObject) : void
     - protected static SimplePdoWrapper::addAssignmentListSubStmt(&$stmt, array &$markers, array $fields, ?$firstForm = false) : void
-    - private SimplePdoWrapper::handleException([\Exception](http://php.net/manual/en/class.exception.php) $e) : void
+    - private SimplePdoWrapper::handleException([\Exception](http://php.net/manual/en/class.exception.php) $e, ?array $markers = []) : void
 
 }
 

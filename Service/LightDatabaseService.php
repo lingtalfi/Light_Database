@@ -4,6 +4,7 @@
 namespace Ling\Light_Database\Service;
 
 
+use Ling\ArrayToString\ArrayToStringTool;
 use Ling\Light\Events\LightEvent;
 use Ling\Light_Database\LightDatabasePdoWrapper;
 use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperQueryException;
@@ -59,7 +60,7 @@ class LightDatabaseService extends LightDatabasePdoWrapper
         if ($e instanceof SimplePdoWrapperQueryException) {
             $devMode = $this->options['devMode'] ?? false;
             if (true === $devMode) {
-                $e->setMessage($e->getMessage() . " ||| query=" . $e->getQuery());
+                $e->setMessage($e->getMessage() . " ||| query=" . $e->getQuery() . " ||| markers=" . ArrayToStringTool::toInlinePhpArray($e->getMarkers()));
             }
         }
     }

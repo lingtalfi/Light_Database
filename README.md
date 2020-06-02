@@ -109,6 +109,10 @@ $events.methods_collection:
 History Log
 =============
 
+- 1.13.0 -- 2020-06-02
+
+    - update service, embellished SimplePdoWrapperQueryException message now contains marker information as well
+    
 - 1.12.0 -- 2020-06-02
 
     - update service, embellish SimplePdoWrapperQueryException message when devMode=true
