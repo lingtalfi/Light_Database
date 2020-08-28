@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2020-06-02
+2019-07-22 -> 2020-08-28
 
 
 
@@ -108,6 +108,10 @@ $events.methods_collection:
 
 History Log
 =============
+
+- 1.14.0 -- 2020-08-28
+
+    - update service, dropped pXXX methods which added unnecessary complexity to the api
 
 - 1.13.0 -- 2020-06-02
 
