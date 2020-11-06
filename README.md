@@ -66,7 +66,9 @@ database:
             options:
                 devMode: true
                 queryLog: true
-                queryLogFormatting: white:bgBlack
+                queryLogFormatting:
+                    query: white:bgBlack
+                    error: white:bgRed
         setContainer:
             container: @container()
 
@@ -108,8 +110,6 @@ $logger.methods_collection:
                     configure:
                         options:
                             file: ${app_dir}/log/sql/{date}.txt
-
-
 ```
 
 
@@ -124,6 +124,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.2 -- 2020-11-06
+
+    - update query log system, add formatting for error message
+    
 - 1.14.1 -- 2020-11-06
 
     - update service, add query log system

@@ -38,6 +38,9 @@ The type can be one of:
 - fetch: indicates when a call to our fetch method
 - fetchAll: indicates when a call to our fetchAll method
 - execute: indicates when a call to our executeStatement method
+- exception: indicates that an exception was caught from either a transaction, or a call to one of those methods:
+     insert, replace, update, delete, fetch, fetchAll, execute.
+
 
 The rest of the arguments depends on the type.
 Only the following types have arguments (see the source code for more details):
@@ -49,6 +52,7 @@ Only the following types have arguments (see the source code for more details):
 - fetch: $query, $markers, $fetchStyle
 - fetchAll: $markers, $fetchStyle, $fetchArg, $ctorArgs
 - execute: $query
+- exception: $exception (the Exception instance)
 
 
 
@@ -80,7 +84,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabaseService::queryLog](https://github.com/lingtalfi/Light_Database/blob/master/Service/LightDatabaseService.php#L74-L115)
+See the source code for method [LightDatabaseService::queryLog](https://github.com/lingtalfi/Light_Database/blob/master/Service/LightDatabaseService.php#L74-L132)
 
 
 See Also

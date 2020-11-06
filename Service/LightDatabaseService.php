@@ -73,46 +73,62 @@ class LightDatabaseService extends LightDatabasePdoWrapper
      */
     protected function queryLog(string $type, ...$args)
     {
-        /**
-         * @var $lg LightLoggerService
-         */
-        $lg = $this->container->get("logger");
+        $queryLog = $this->options['queryLog'] ?? false;
+        if (true === $queryLog) {
 
-        $bashFmt = new BashtmlFormatter();
-        $sType = $type;
-        $fmt = $this->options["queryLogFormatting"] ?? null;
-        if (null !== $fmt) {
-            $sType = $bashFmt->format("<$fmt>$sType</$fmt>");
+
+            $fmt = $this->options["queryLogFormatting"] ?? [];
+            $fmtQuery = $fmt['query'] ?? null;
+            $fmtError = $fmt['error'] ?? null;
+
+            /**
+             * @var $lg LightLoggerService
+             */
+            $lg = $this->container->get("logger");
+            $bashFmt = new BashtmlFormatter();
+            $sType = $type;
+            $isError = false;
+
+
+            switch ($type) {
+                case "insert":
+                case "replace":
+                case "update":
+                case "delete":
+                    $query = trim($args[1]);
+                    $markers = $args[2];
+                    $msg = $query . PHP_EOL;
+                    $msg .= 'markers: ' . ArrayToStringTool::toPhpArray($markers);
+                    break;
+                case "fetch":
+                case "fetchAll":
+                    $query = trim($args[0]);
+                    $markers = $args[1];
+                    $msg = $query . PHP_EOL;
+                    $msg .= 'markers: ' . ArrayToStringTool::toPhpArray($markers);
+                    break;
+                case "execute":
+                    $query = trim($args[0]);
+                    $msg = $query;
+                    break;
+                case "exception":
+                    $e = $args[0];
+                    $msg = $e;
+                    $isError = true;
+                    break;
+                default:
+                    $msg = '';
+                    break;
+            }
+
+            if (true === $isError && null !== $fmtError) {
+                $sType = $bashFmt->format("<$fmtError>$sType</$fmtError>");
+            } elseif (null !== $fmtQuery) {
+                $sType = $bashFmt->format("<$fmtQuery>$sType</$fmtQuery>");
+            }
+
+            $lg->log($sType . ':' . $msg, "database");
         }
-
-
-        switch ($type) {
-            case "insert":
-            case "replace":
-            case "update":
-            case "delete":
-                $query = trim($args[1]);
-                $markers = $args[2];
-                $msg = $sType . ":" . $query . PHP_EOL;
-                $msg .= 'markers: ' . ArrayToStringTool::toPhpArray($markers);
-                break;
-            case "fetch":
-            case "fetchAll":
-                $query = trim($args[0]);
-                $markers = $args[1];
-                $msg = $sType . ":" . $query . PHP_EOL;
-                $msg .= 'markers: ' . ArrayToStringTool::toPhpArray($markers);
-                break;
-            case "execute":
-                $query = trim($args[0]);
-                $msg = $sType . ":" . $query;
-                break;
-            default:
-                $msg = $sType;
-                break;
-        }
-        $lg->log($msg, "database");
     }
-
 
 }
