@@ -4,7 +4,7 @@
 
 The LightDatabaseService class
 ================
-2019-07-22 --> 2020-08-28
+2019-07-22 --> 2020-11-06
 
 
 
@@ -38,6 +38,7 @@ class <span class="pl-k">LightDatabaseService</span> extends [LightDatabasePdoWr
     - public [__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/__construct.md)() : void
     - public [setOptions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/setOptions.md)(array $options) : void
     - public [onExceptionCaught](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/onExceptionCaught.md)(Ling\Light\Events\LightEvent $event) : void
+    - protected [queryLog](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/queryLog.md)(string $type, ?...$args) : void
 
 - Inherited methods
     - public [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md)(array $settings) : void
@@ -73,6 +74,9 @@ Properties
 - <span id="property-options"><b>options</b></span>
 
     This property holds the options for this instance.
+    
+    
+    See our [Light_Database conception notes options](https://github.com/lingtalfi/Light_Database/blob/master/doc/pages/conception-notes.md#service-options) for more details.
     
     
 
@@ -116,6 +120,7 @@ Methods
 - [LightDatabaseService::__construct](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/__construct.md) &ndash; Builds the LightDatabaseService instance.
 - [LightDatabaseService::setOptions](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/setOptions.md) &ndash; Sets the options.
 - [LightDatabaseService::onExceptionCaught](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/onExceptionCaught.md) &ndash; Embellishes the error message in SimplePdoWrapperQueryException exceptions.
+- [LightDatabaseService::queryLog](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Service/LightDatabaseService/queryLog.md) &ndash; Hook for children classes.
 - [LightDatabasePdoWrapper::init](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/init.md) &ndash; Creates the pdo instance and attaches it to this instance.
 - [LightDatabasePdoWrapper::getConnectionException](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/getConnectionException.md) &ndash; init method.
 - [LightDatabasePdoWrapper::setContainer](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/LightDatabasePdoWrapper/setContainer.md) &ndash; Sets the container.

@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2020-08-28
+2019-07-22 -> 2020-11-06
 
 
 
@@ -65,6 +65,8 @@ database:
         setOptions:
             options:
                 devMode: true
+                queryLog: true
+                queryLogFormatting: white:bgBlack
         setContainer:
             container: @container()
 
@@ -95,6 +97,19 @@ $events.methods_collection:
                 callable_method: onExceptionCaught
 
 
+$logger.methods_collection:
+    -
+        method: addListener
+        args:
+            channels: database
+            listener:
+                instance: Ling\Light_Logger\Listener\LightFileLoggerListener
+                methods:
+                    configure:
+                        options:
+                            file: ${app_dir}/log/sql/{date}.txt
+
+
 ```
 
 
@@ -109,6 +124,10 @@ $events.methods_collection:
 History Log
 =============
 
+- 1.14.1 -- 2020-11-06
+
+    - update service, add query log system
+    
 - 1.14.0 -- 2020-08-28
 
     - update service, dropped pXXX methods which added unnecessary complexity to the api

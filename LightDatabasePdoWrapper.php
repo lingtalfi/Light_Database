@@ -3,11 +3,12 @@
 
 namespace Ling\Light_Database;
 
+use Ling\CheapLogger\CheapLogger;
 use Ling\Light\Events\LightEvent;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
 use Ling\Light_Events\Service\LightEventsService;
-use Ling\Light_UserRowRestriction\Service\LightUserRowRestrictionService;
+use Ling\Light_Logger\LightLoggerService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
 /**
@@ -32,9 +33,6 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
     protected $container;
 
 
-
-
-
     /**
      * Builds the LightDatabasePdoWrapper instance.
      */
@@ -44,9 +42,6 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
         $this->pdoException = null;
         $this->container = null;
     }
-
-
-
 
 
     /**
@@ -210,4 +205,8 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
             ]);
         $dispatcher->dispatch($eventName, $event);
     }
+
+
+
+
 }

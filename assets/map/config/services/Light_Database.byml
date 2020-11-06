@@ -6,6 +6,8 @@ database:
         setOptions:
             options:
                 devMode: true
+                queryLog: true
+                queryLogFormatting: white:bgBlack
         setContainer:
             container: @container()
 
@@ -34,3 +36,16 @@ $events.methods_collection:
             listener:
                 instance: @service(database)
                 callable_method: onExceptionCaught
+
+
+$logger.methods_collection:
+    -
+        method: addListener
+        args:
+            channels: database
+            listener:
+                instance: Ling\Light_Logger\Listener\LightFileLoggerListener
+                methods:
+                    configure:
+                        options:
+                            file: ${app_dir}/log/sql/{date}.txt

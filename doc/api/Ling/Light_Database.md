@@ -1,6 +1,6 @@
 Ling/Light_Database
 ================
-2019-07-22 --> 2020-08-28
+2019-07-22 --> 2020-11-06
 
 
 
@@ -54,10 +54,12 @@ Table of contents
 
 Dependencies
 ============
+- [CheapLogger](https://github.com/lingtalfi/CheapLogger)
 - [Light](https://github.com/lingtalfi/Light)
 - [Light_Events](https://github.com/lingtalfi/Light_Events)
-- [Light_UserRowRestriction](https://github.com/lingtalfi/Light_UserRowRestriction)
+- [Light_Logger](https://github.com/lingtalfi/Light_Logger)
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper)
 - [ArrayToString](https://github.com/lingtalfi/ArrayToString)
+- [CliTools](https://github.com/lingtalfi/CliTools)
 
 
