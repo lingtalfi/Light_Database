@@ -125,6 +125,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.8 -- 2020-11-20
+
+    - update service, the queryLogTrackSource option now renders more info about arguments
+    
 - 1.14.7 -- 2020-11-20
 
     - update service, the queryLogTrackSource option now also renders compact arguments

@@ -5,6 +5,7 @@ namespace Ling\Light_Database\Service;
 
 
 use Ling\ArrayToString\ArrayToStringTool;
+use Ling\Bat\DebugTool;
 use Ling\CliTools\Formatter\BashtmlFormatter;
 use Ling\Light\Events\LightEvent;
 use Ling\Light_Database\LightDatabasePdoWrapper;
@@ -177,15 +178,7 @@ class LightDatabaseService extends LightDatabasePdoWrapper
                         if (0 !== $n++) {
                             $sArgs .= ', ';
                         }
-                        if (is_scalar($arg)) {
-                            $sArgs .= $arg;
-                        } else {
-                            if (is_object($arg)) {
-                                $sArgs = get_class($arg);
-                            } else {
-                                $sArgs .= gettype($arg);
-                            }
-                        }
+                        $sArgs .= DebugTool::toString($arg, ['expandArray' => false]);
                     }
                     $end .= '#' . $k . " $file($line): $class${type}${function}($sArgs)" . PHP_EOL;
                 }
