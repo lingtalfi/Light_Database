@@ -99,6 +99,7 @@ class LightDatabaseService extends LightDatabasePdoWrapper
         $queryLog = $this->options['queryLog'] ?? false;
         if (true === $queryLog) {
 
+            $queryLogTrackSource = $this->options['queryLogTrackSource'] ?? false;
 
             $fmt = $this->options["queryLogFormatting"] ?? [];
             $fmtQuery = $fmt['query'] ?? null;
@@ -150,7 +151,25 @@ class LightDatabaseService extends LightDatabasePdoWrapper
                 $sType = $bashFmt->format("<$fmtQuery>$sType</$fmtQuery>");
             }
 
-            $lg->log($sType . ':' . $msg, "database");
+            $end = '';
+            if (true === $queryLogTrackSource) {
+                $trace = debug_backtrace(0);
+                /**
+                 * the first trace should be the call to the queryLog function, we want the second one.
+                 */
+                $info = $trace[1];
+                $end .= PHP_EOL . 'Source: ' . PHP_EOL;
+                if (array_key_exists('file', $info)) {
+                    $end .= 'file: ' . $info['file'] . PHP_EOL;
+                }
+                if (array_key_exists('line', $info)) {
+                    $end .= 'line: ' . $info['line'] . PHP_EOL;
+                }
+
+            }
+
+
+            $lg->log($sType . ':' . $msg . $end, "database");
         }
     }
 

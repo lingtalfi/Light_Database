@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2020-11-13
+2019-07-22 -> 2020-11-20
 
 
 
@@ -66,6 +66,7 @@ database:
             options:
                 devMode: true
                 queryLog: true
+                queryLogTrackSource: true
                 queryLogFormatting:
                     query: white:bgBlack
                     error: white:bgRed
@@ -124,7 +125,11 @@ $logger.methods_collection:
 History Log
 =============
 
-- 1.14.3 -- 2020-11-13
+- 1.14.4 -- 2020-11-20
+
+    - update service, add queryLogTrackSource option
+    
+- 1.14.3 -- 2020-11-16
 
     - update service, add getMysqlInfoUtil method
     
