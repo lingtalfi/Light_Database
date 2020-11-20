@@ -5,6 +5,7 @@ namespace Ling\Light_Database\Service;
 
 
 use Ling\ArrayToString\ArrayToStringTool;
+use Ling\CheapLogger\CheapLogger;
 use Ling\CliTools\Formatter\BashtmlFormatter;
 use Ling\Light\Events\LightEvent;
 use Ling\Light_Database\LightDatabasePdoWrapper;
@@ -161,13 +162,16 @@ class LightDatabaseService extends LightDatabasePdoWrapper
                  * the first trace should be the call to the queryLog function, we don't want it.
                  */
                 array_shift($trace);
-                foreach ($trace as $info) {
-                    if (array_key_exists('file', $info)) {
-                        $end .= 'file: ' . $info['file'] . PHP_EOL;
-                    }
-                    if (array_key_exists('line', $info)) {
-                        $end .= 'line: ' . $info['line'] . PHP_EOL;
-                    }
+
+                foreach ($trace as $k => $info) {
+
+
+                    $file = $info['file'] ?? '';
+                    $line = $info['line'] ?? '';
+                    $class = $info['class'] ?? '';
+                    $type = $info['type'] ?? '';
+                    $function = $info['function'] ?? '';
+                    $end .= '#' . $k . " $file($line): $class${type}${function}(...)" . PHP_EOL;
                 }
 
             }

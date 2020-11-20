@@ -125,6 +125,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.6 -- 2020-11-20
+
+    - update service, the queryLogTrackSource option renders in a more php style way
+    
 - 1.14.5 -- 2020-11-20
 
     - update service, the queryLogTrackSource option is now recursive
