@@ -155,33 +155,7 @@ class LightDatabaseService extends LightDatabasePdoWrapper
             $end = '';
             if (true === $queryLogTrackSource) {
                 $end .= PHP_EOL . 'Source: ' . PHP_EOL;
-
-
-                $trace = debug_backtrace(0);
-                /**
-                 * the first trace should be the call to the queryLog function, we don't want it.
-                 */
-                array_shift($trace);
-
-                foreach ($trace as $k => $info) {
-
-
-                    $file = $info['file'] ?? '';
-                    $line = $info['line'] ?? '';
-                    $class = $info['class'] ?? '';
-                    $type = $info['type'] ?? '';
-                    $function = $info['function'] ?? '';
-                    $args = $info['args'];
-                    $sArgs = '';
-                    $n = 0;
-                    foreach ($args as $arg) {
-                        if (0 !== $n++) {
-                            $sArgs .= ', ';
-                        }
-                        $sArgs .= DebugTool::toString($arg, ['expandArray' => false]);
-                    }
-                    $end .= '#' . $k . " $file($line): $class${type}${function}($sArgs)" . PHP_EOL;
-                }
+                $end .= DebugTool::getTraceAsString(['skip' => 2, 'strMaxLen' => 64]);
 
             }
 
