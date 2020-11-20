@@ -5,7 +5,6 @@ namespace Ling\Light_Database\Service;
 
 
 use Ling\ArrayToString\ArrayToStringTool;
-use Ling\CheapLogger\CheapLogger;
 use Ling\CliTools\Formatter\BashtmlFormatter;
 use Ling\Light\Events\LightEvent;
 use Ling\Light_Database\LightDatabasePdoWrapper;
@@ -171,7 +170,24 @@ class LightDatabaseService extends LightDatabasePdoWrapper
                     $class = $info['class'] ?? '';
                     $type = $info['type'] ?? '';
                     $function = $info['function'] ?? '';
-                    $end .= '#' . $k . " $file($line): $class${type}${function}(...)" . PHP_EOL;
+                    $args = $info['args'];
+                    $sArgs = '';
+                    $n = 0;
+                    foreach ($args as $arg) {
+                        if (0 !== $n++) {
+                            $sArgs .= ', ';
+                        }
+                        if (is_scalar($arg)) {
+                            $sArgs .= $arg;
+                        } else {
+                            if (is_object($arg)) {
+                                $sArgs = get_class($arg);
+                            } else {
+                                $sArgs .= gettype($arg);
+                            }
+                        }
+                    }
+                    $end .= '#' . $k . " $file($line): $class${type}${function}($sArgs)" . PHP_EOL;
                 }
 
             }
