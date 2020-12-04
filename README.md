@@ -125,6 +125,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.10 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.14.9 -- 2020-11-20
 
     - update service, the queryLogTrackSource option has now better rendering
