@@ -5,9 +5,10 @@ dependencies:
         - Light_Events
         - Light_Logger
         - SimplePdoWrapper
+        - CliTools
+        - Light_PlanetInstaller
         - ArrayToString
         - Bat
-        - CliTools
     
 
 post_install: 

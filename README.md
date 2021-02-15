@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2020-11-20
+2019-07-22 -> 2021-02-15
 
 
 
@@ -125,9 +125,13 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.12 -- 2021-02-15
+
+    - add LightDatabasePlanetInstaller class
+  
 - 1.14.11 -- 2020-12-08
 
-    - Fix lpi-deps not using natsort.
+    - Fix lpi-deps not using natsort
 
 - 1.14.10 -- 2020-12-04
 
