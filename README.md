@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-02-15
+2019-07-22 -> 2021-02-23
 
 
 
@@ -125,6 +125,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.13 -- 2021-02-23
+
+    - update LightDatabasePlanetInstaller->onMapCopyAfter, now only execute if necessary
+  
 - 1.14.12 -- 2021-02-15
 
     - add LightDatabasePlanetInstaller class
