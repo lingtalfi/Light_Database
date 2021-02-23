@@ -23,7 +23,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller
     public function onMapCopyAfter(string $appDir, OutputInterface $output): void
     {
 
-        $propKey = '$database.methods.init.settings';
+        $propKey = '$database\.methods\.init\.settings';
         if (false === ZFileHelper::hasProp($this->container, $propKey)) {
 
             $output->write("You are installing Light_Database planet. Please provide your database credentials." . PHP_EOL);
@@ -32,7 +32,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller
             $pass = QuestionHelper::ask($output, "3/3: What's the password of the database user? ");
 
 
-            ZFileHelper::setProp($this->container, str_replace('.', '\.', $propKey), [
+            ZFileHelper::setProp($this->container, $propKey, [
                 'pdo_database' => $database,
                 'pdo_user' => $user,
                 'pdo_pass' => $pass,

@@ -125,6 +125,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.14 -- 2021-02-23
+
+    - fix LightDatabasePlanetInstaller->onMapCopyAfter, erroneous bool condition
+  
 - 1.14.13 -- 2021-02-23
 
     - update LightDatabasePlanetInstaller->onMapCopyAfter, now only execute if necessary
