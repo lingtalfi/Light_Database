@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-03-05
+2019-07-22 -> 2021-03-15
 
 
 
@@ -99,7 +99,7 @@ $events.methods_collection:
         method: registerListener
         args:
             events:
-                - Light.on_exception_caught
+                - Ling.Light.on_exception_caught
             listener:
                 instance: @service(database)
                 callable_method: onExceptionCaught
@@ -130,6 +130,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.16 -- 2021-03-15
+
+    - update planet to adapt Ling.Light:0.70.0
+  
 - 1.14.15 -- 2021-03-05
 
     - update README.md, add install alternative
