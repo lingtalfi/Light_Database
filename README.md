@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-03-18
+2019-07-22 -> 2021-03-19
 
 
 
@@ -119,6 +119,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.18 -- 2021-03-19
+
+    - fix open events not in the "events" directory
+  
 - 1.14.17 -- 2021-03-18
 
     - switch to Ling.Light_Events' open registration system
