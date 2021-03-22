@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-03-19
+2019-07-22 -> 2021-03-22
 
 
 
@@ -119,6 +119,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.19 -- 2021-03-22
+
+    - adapt api to work with Ling.Light_Events:1.10.0
+  
 - 1.14.18 -- 2021-03-19
 
     - fix open events not in the "events" directory
