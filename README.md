@@ -119,6 +119,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.21 -- 2021-05-03
+
+    - Update dependencies to Ling.Light_Logger (pushed by SubscribersUtil)
+
 - 1.14.20 -- 2021-05-03
 
     - fake commit to test generated lpi-deps.byml 
