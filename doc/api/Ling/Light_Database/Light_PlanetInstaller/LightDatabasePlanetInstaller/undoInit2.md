@@ -53,7 +53,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightDatabasePlanetInstaller::undoInit2](https://github.com/lingtalfi/Light_Database/blob/master/Light_PlanetInstaller/LightDatabasePlanetInstaller.php#L107-L117)
+See the source code for method [LightDatabasePlanetInstaller::undoInit2](https://github.com/lingtalfi/Light_Database/blob/master/Light_PlanetInstaller/LightDatabasePlanetInstaller.php#L108-L118)
 
 
 See Also

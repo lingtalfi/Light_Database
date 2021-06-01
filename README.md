@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-05-31
+2019-07-22 -> 2021-06-01
 
 
 
@@ -119,6 +119,10 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.27 -- 2021-06-01
+
+    - adding precision to the init1 message in LightDatabasePlanetInstaller
+  
 - 1.14.26 -- 2021-05-31
 
     - Removing trailing plus in lpi-deps file (to work with Light_PlanetInstaller:2.0.0 api

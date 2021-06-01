@@ -36,6 +36,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
             $output->write(PHP_EOL);
 
             $output->write("You are installing Light_Database planet. Please provide your database credentials." . PHP_EOL);
+            $output->write("Note: you need to create the database before starting this process (otherwise it won't work)." . PHP_EOL);
             $database = QuestionHelper::ask($output, "1/3: What's the name of your database? ");
             $user = QuestionHelper::ask($output, "2/3: What's the name of the database user? ");
             $pass = QuestionHelper::ask($output, "3/3: What's the password of the database user? ");
