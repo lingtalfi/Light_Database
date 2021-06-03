@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-06-01
+2019-07-22 -> 2021-06-03
 
 
 
@@ -119,6 +119,11 @@ $logger.methods_collection:
 History Log
 =============
 
+- 1.14.28 -- 2021-06-03
+
+    - add LightDatabaseBasePlanetInstaller class
+    - adapt api to Light_PlanetInstaller 2.0.4
+  
 - 1.14.27 -- 2021-06-01
 
     - adding precision to the init1 message in LightDatabasePlanetInstaller

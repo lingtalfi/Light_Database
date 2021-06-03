@@ -23,7 +23,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
     /**
      * @implementation
      */
-    public function init1(string $appDir, OutputInterface $output): void
+    public function init1(string $appDir, OutputInterface $output, array $options = []): void
     {
 
 
@@ -67,7 +67,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
     /**
      * @implementation
      */
-    public function undoInit1(string $appDir, OutputInterface $output): void
+    public function undoInit1(string $appDir, OutputInterface $output, array $options = []): void
     {
 
 
@@ -89,7 +89,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
     /**
      * @implementation
      */
-    public function init2(string $appDir, OutputInterface $output): void
+    public function init2(string $appDir, OutputInterface $output, array $options = []): void
     {
 
         $planetDotName = "Ling.Light_Database";
@@ -105,7 +105,7 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
     /**
      * @implementation
      */
-    public function undoInit2(string $appDir, OutputInterface $output): void
+    public function undoInit2(string $appDir, OutputInterface $output, array $options = []): void
     {
 
         $planetDotName = "Ling.Light_Database";

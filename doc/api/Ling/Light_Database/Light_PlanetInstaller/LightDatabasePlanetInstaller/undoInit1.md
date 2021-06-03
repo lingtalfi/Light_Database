@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [LightDatabasePlanetInstaller::undoInit1](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Light_PlanetInstaller/LightDatabasePlanetInstaller/undoInit1.md)(string $appDir, Ling\CliTools\Output\OutputInterface $output) : void
+public [LightDatabasePlanetInstaller::undoInit1](https://github.com/lingtalfi/Light_Database/blob/master/doc/api/Ling/Light_Database/Light_PlanetInstaller/LightDatabasePlanetInstaller/undoInit1.md)(string $appDir, Ling\CliTools\Output\OutputInterface $output, ?array $options = []) : void
 
 
 
@@ -35,6 +35,10 @@ Parameters
     
 
 - output
+
+    
+
+- options
 
     
 
