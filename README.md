@@ -1,6 +1,6 @@
 Light_Database
 ===========
-2019-07-22 -> 2021-06-03
+2019-07-22 -> 2021-06-25
 
 
 
@@ -91,20 +91,6 @@ database:
 
 
 
-# --------------------------------------
-# hooks
-# --------------------------------------
-$logger.methods_collection:
-    -
-        method: addListener
-        args:
-            channels: database
-            listener:
-                instance: Ling\Light_Logger\Listener\LightFileLoggerListener
-                methods:
-                    configure:
-                        options:
-                            file: ${app_dir}/log/sql/{date}.txt
 ```
 
 
@@ -118,6 +104,10 @@ $logger.methods_collection:
 
 History Log
 =============
+
+- 1.14.29 -- 2021-06-25
+
+    - update api, now use Ling.Light_Logger open registration system
 
 - 1.14.28 -- 2021-06-03
 

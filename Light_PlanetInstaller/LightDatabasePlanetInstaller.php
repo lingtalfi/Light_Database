@@ -8,6 +8,7 @@ use Ling\CliTools\Helper\QuestionHelper;
 use Ling\CliTools\Output\OutputInterface;
 use Ling\Light\Helper\ZFileHelper;
 use Ling\Light_Events\Helper\LightEventsHelper;
+use Ling\Light_Logger\Helper\LightLoggerHelper;
 use Ling\Light_PlanetInstaller\PlanetInstaller\LightBasePlanetInstaller;
 use Ling\Light_PlanetInstaller\PlanetInstaller\LightPlanetInstallerInit1HookInterface;
 use Ling\Light_PlanetInstaller\PlanetInstaller\LightPlanetInstallerInit2HookInterface;
@@ -99,6 +100,14 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
         $output->write("$planetDotName: registering open events...");
         LightEventsHelper::registerOpenEventByPlanet($this->container, $planetDotName);
         $output->write("<success>ok.</success>" . PHP_EOL);
+
+
+        //--------------------------------------------
+        // logger
+        //--------------------------------------------
+        $output->write("$planetDotName: registering Ling.Light_Logger listeners to open system...");
+        LightLoggerHelper::copyListenersFromPluginToMaster($appDir, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
     }
 
 
@@ -114,6 +123,14 @@ class LightDatabasePlanetInstaller extends LightBasePlanetInstaller implements L
         //--------------------------------------------
         $output->write("$planetDotName: unregistering open events...");
         LightEventsHelper::unregisterOpenEventByPlanet($this->container, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
+
+
+        //--------------------------------------------
+        // logger
+        //--------------------------------------------
+        $output->write("$planetDotName: unregistering Ling.Light_Logger listeners from open system...");
+        LightLoggerHelper::removeListenersFromMaster($appDir, $planetDotName);
         $output->write("<success>ok.</success>" . PHP_EOL);
     }
 
