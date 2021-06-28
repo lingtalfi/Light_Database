@@ -3,12 +3,10 @@
 
 namespace Ling\Light_Database;
 
-use Ling\CheapLogger\CheapLogger;
 use Ling\Light\Events\LightEvent;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Exception\LightDatabaseException;
 use Ling\Light_Events\Service\LightEventsService;
-use Ling\Light_Logger\LightLoggerService;
 use Ling\SimplePdoWrapper\SimplePdoWrapper;
 
 /**
@@ -205,8 +203,6 @@ class LightDatabasePdoWrapper extends SimplePdoWrapper
             ]);
         $dispatcher->dispatch($eventName, $event);
     }
-
-
 
 
 }

@@ -2,7 +2,6 @@ dependencies:
     Ling: 
         - ArrayToString
         - Bat
-        - CheapLogger
         - CliTools
         - Light
         - Light_DbSynchronizer

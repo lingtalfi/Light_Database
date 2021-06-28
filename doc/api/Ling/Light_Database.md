@@ -1,6 +1,6 @@
 Ling/Light_Database
 ================
-2019-07-22 --> 2021-06-25
+2019-07-22 --> 2021-06-28
 
 
 
@@ -69,7 +69,6 @@ Dependencies
 ============
 - [ArrayToString](https://github.com/lingtalfi/ArrayToString)
 - [Bat](https://github.com/lingtalfi/Bat)
-- [CheapLogger](https://github.com/lingtalfi/CheapLogger)
 - [CliTools](https://github.com/lingtalfi/CliTools)
 - [Light](https://github.com/lingtalfi/Light)
 - [Light_DbSynchronizer](https://github.com/lingtalfi/Light_DbSynchronizer)
